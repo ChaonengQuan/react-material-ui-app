@@ -16,8 +16,8 @@ const Cart = () => {
 
                 <Box style={{fontSize:200}}> Item </Box>
                 <Box style={{fontSize:200}}> Item </Box>
-                <Box style={{fontSize:200}}> Item </Box>
-                <Box style={{fontSize:200}}> Item </Box>
+                {/* <Box style={{fontSize:200}}> Item </Box>
+                <Box style={{fontSize:200}}> Item </Box> */}
 
                 
                 <Box className="cartCheckoutBox">

@@ -3,7 +3,7 @@ const { Paper, Tabs, Tab } = require("@material-ui/core");
 const Menu = ({tabValue, handleTabChange}) => {
     return (
         <div>
-            <Paper>
+            <Paper style={{backgroundColor: "#d8d174", borderRadius: "25px"}}>
                 <Tabs
                     value={tabValue}
                     onChange={handleTabChange}
