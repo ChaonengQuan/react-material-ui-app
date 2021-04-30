@@ -4,7 +4,8 @@ import "./Header.css"
 const Header = () => {
     return (
         <Grid container justify="flex-end" className="header">
-            <Grid item><Box className="headerItem">Quan's Healthy Resturant</Box></Grid>
+            <Grid item><Box className="headerItem">Quan's Healthy Cuisine</Box></Grid>
+            <Grid item><Box className="headerItem">Location: Tucson</Box></Grid>
         </Grid>
     )
 }
