@@ -5,7 +5,7 @@ import "./Cart.css"
 const Cart = () => {
     return (
         <div>
-            <Box className="cartTitle"><ShoppingCartIcon style={{fontSize: "3vh"}}/> Your Order</Box>
+            <Box className="cartTitle"><ShoppingCartIcon style={{fontSize: "36px"}}/> Your Order</Box>
         </div>
     )
 }

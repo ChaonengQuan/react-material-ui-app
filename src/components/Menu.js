@@ -1,10 +1,25 @@
+const { Paper, Tabs, Tab } = require("@material-ui/core");
 
-const Menu = () => {
+const Menu = ({tabValue, handleTabChange}) => {
     return (
         <div>
-            Menu
+            <Paper>
+                <Tabs
+                    value={tabValue}
+                    onChange={handleTabChange}
+                    indicatorColor="primary"
+                    TabIndicatorProps={{style: {background:'black'}}}
+                    centered
+                >
+                    <Tab label="Appetizers" />
+                    <Tab label="Salads"/>
+                    <Tab label="Sandwiches" />
+                    <Tab label="Sides" />
+                    <Tab label="Beverages" />
+                </Tabs>
+            </Paper>
         </div>
-    )
-}
+    );
+};
 
-export default Menu
+export default Menu;

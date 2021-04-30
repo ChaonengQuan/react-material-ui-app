@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3vh;
-    border: solid 0.3vh black;
-    border-radius: 2vh;
+    font-size: 36px;
+    border: solid 2px black;
+    border-radius: 25px;
 }
