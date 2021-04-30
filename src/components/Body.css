@@ -1,17 +1,30 @@
-.body{
+.body {
     height: 90vh;
 }
 
-.menu{
+.menu {
     height: 100%;
     width: 70%;
     border-radius: 25px;
-    background-color:  #b6c454;
+    background-color: #b6c454;
 }
 
-.cart{
+.cart {
     height: 100%;
     width: 30%;
+    overflow-y: scroll;
     background-color: #e6d3a3;
     border-radius: 25px;
+}
+
+/* Force scroll bar to always show */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }

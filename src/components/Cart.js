@@ -1,13 +1,39 @@
-import { Box } from "@material-ui/core"
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import "./Cart.css"
+import { Box, Button, Grid } from "@material-ui/core";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import "./Cart.css";
 
 const Cart = () => {
     return (
-        <div>
-            <Box className="cartTitle"><ShoppingCartIcon style={{fontSize: "36px"}}/> Your Order</Box>
-        </div>
-    )
-}
+        <>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+            >
+                <Box className="cartTitle">
+                    <ShoppingCartIcon style={{ fontSize: "36px" }} /> Your Order
+                </Box>
 
-export default Cart
+                <Box style={{fontSize:200}}> Item </Box>
+                <Box style={{fontSize:200}}> Item </Box>
+                <Box style={{fontSize:200}}> Item </Box>
+                <Box style={{fontSize:200}}> Item </Box>
+
+                
+                <Box className="cartCheckoutBox">
+                    <div>Subtotal: $99.99</div>
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            alert("Checkout");
+                        }}
+                    >
+                        Checkout
+                    </Button>
+                </Box>
+            </Grid>
+        </>
+    );
+};
+
+export default Cart;

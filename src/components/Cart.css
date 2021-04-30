@@ -6,3 +6,11 @@
     border: solid 2px black;
     border-radius: 25px;
 }
+
+.cartCheckoutBox{
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    border: solid 2px black;
+    border-radius: 25px;
+}
