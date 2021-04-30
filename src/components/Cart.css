@@ -1,0 +1,8 @@
+.cartTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+    border: solid 0.3vh black;
+    border-radius: 2vh;
+}

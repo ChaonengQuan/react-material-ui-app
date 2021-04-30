@@ -1,3 +1,9 @@
+# react-material-ui-app
+A restaurants menu frontend web application using React,.js and Material UI
+
+---
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
