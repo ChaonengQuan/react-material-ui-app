@@ -8,6 +8,7 @@
     width: 70%;
     border-radius: 25px;
     background-color: #b6c454;
+    overflow-y: scroll;
 }
 
 .cart {
@@ -19,9 +20,10 @@
 }
 
 /* Force scroll bar to always show */
+/* This will cause the UI to seems slightly off on the right side when there is no overflow */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
-    width: 7px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {

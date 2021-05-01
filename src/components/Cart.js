@@ -14,10 +14,15 @@ const Cart = () => {
                     <ShoppingCartIcon style={{ fontSize: "36px" }} /> Your Order
                 </Box>
 
-                <Box style={{fontSize:200}}> Item </Box>
-                <Box style={{fontSize:200}}> Item </Box>
-                {/* <Box style={{fontSize:200}}> Item </Box>
-                <Box style={{fontSize:200}}> Item </Box> */}
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+                <Box style={{fontSize:100}}> Item </Box>
+
 
                 
                 <Box className="cartCheckoutBox">
