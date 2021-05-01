@@ -80,6 +80,10 @@ function App() {
         // }
     ]);
 
+    const clearCart = () => {
+        setCart([]);
+    };
+
     const addToCart = (newItem) => {
         let itemAlreadyInCart = cart
             .map((item) => item.itemName)
@@ -136,6 +140,7 @@ function App() {
                 addToCart={addToCart}
                 incrementCount={incrementCount}
                 decrementCount={decrementCount}
+                clearCart={clearCart}
             />
         </div>
     );
