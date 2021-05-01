@@ -3,7 +3,7 @@ import Cart from "./Cart";
 import Menu from "./Menu";
 import "./Body.css";
 
-const Body = ({ tabValue, handleTabChange, items, images }) => {
+const Body = ({ tabValue, handleTabChange, items, images, cart }) => {
     return (
         <>
             <Grid container className="body">
@@ -16,7 +16,7 @@ const Body = ({ tabValue, handleTabChange, items, images }) => {
                     />
                 </Grid>
                 <Grid item className="cart">
-                    <Cart />
+                    <Cart cart={cart} />
                 </Grid>
             </Grid>
         </>

@@ -79,12 +79,12 @@ function App() {
             itemPrice: 0.99
         },
         {
-            itemCount: 1,
+            itemCount: 20,
             itemName: "Edamame",
             itemPrice: 6.49
         },
         {
-            itemCount: 1,
+            itemCount: 100,
             itemName: "Strawberry Fruit Smoothie",
             itemPrice: 12.49
         }
@@ -105,6 +105,7 @@ function App() {
                 handleTabChange={handleTabChange}
                 items={items}
                 images={images}
+                cart={cart}
             />
         </div>
     );
