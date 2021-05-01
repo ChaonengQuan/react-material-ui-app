@@ -11,7 +11,8 @@ const Body = ({
     cart,
     addToCart,
     incrementCount,
-    decrementCount
+    decrementCount,
+    clearCart
 }) => {
     return (
         <>
@@ -30,6 +31,7 @@ const Body = ({
                         cart={cart}
                         incrementCount={incrementCount}
                         decrementCount={decrementCount}
+                        clearCart={clearCart}
                     />
                 </Grid>
             </Grid>

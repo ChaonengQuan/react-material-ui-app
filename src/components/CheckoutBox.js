@@ -14,7 +14,7 @@ import "./CheckoutBox.css";
 import { useState } from "react";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 
-function CheckoutBox({ cart }) {
+function CheckoutBox({ cart, clearCart }) {
     function getAmount(cart) {
         const taxRate = 0.056;
         let subtotal = cart
@@ -113,13 +113,17 @@ function CheckoutBox({ cart }) {
                 <Backdrop
                     style={{ zIndex: 1, color: "#fff" }}
                     open={paymentPageOpen}
-                    onClick={handlePaymentPageClose}
+                    onClick={() => {
+                        handlePaymentPageClose();
+                        clearCart();
+                    }}
                 >
                     <Paper
                         style={{
                             backgroundColor: "#e6d3a3",
                             borderRadius: "25px",
-                            padding: "25px"
+                            padding: "25px",
+                            color: "green"
                         }}
                     >
                         Checkout Successful!

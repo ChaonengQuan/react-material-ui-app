@@ -3,7 +3,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./Cart.css";
 import CheckoutBox from "./CheckoutBox";
 
-const Cart = ({ cart, incrementCount, decrementCount }) => {
+const Cart = ({ cart, incrementCount, decrementCount, clearCart }) => {
     return (
         <>
             <Grid container direction="column" justify="center">
@@ -81,7 +81,9 @@ const Cart = ({ cart, incrementCount, decrementCount }) => {
                     );
                 })}
 
-                <CheckoutBox cart={cart} />
+                {cart.length > 0 && (
+                    <CheckoutBox cart={cart} clearCart={clearCart} />
+                )}
             </Grid>
         </>
     );
