@@ -1,5 +1,4 @@
-.cartTitle{
-    display: flex;
+.cartCheckoutBox {
     justify-content: center;
     align-items: center;
     font-size: 36px;

@@ -1,15 +1,9 @@
 import { Box, Button, Grid } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./Cart.css";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
+import CheckoutBox from "./CheckoutBox";
 
 const Cart = ({ cart, incrementCount, decrementCount }) => {
-    function getSubTotal(cart){
-        let sum = cart.map(item => item.itemCount * item.itemPrice ).reduce( (acc, cur) => (acc + cur), 0);
-        return sum.toFixed(2);
-    }
-
     return (
         <>
             <Grid container direction="column" justify="center">
@@ -87,17 +81,7 @@ const Cart = ({ cart, incrementCount, decrementCount }) => {
                     );
                 })}
 
-                <Box className="cartCheckoutBox">
-                    <div>Subtotal: ${getSubTotal(cart)}</div>
-                    <Button
-                        variant="contained"
-                        onClick={() => {
-                            alert("Checkout");
-                        }}
-                    >
-                        Checkout
-                    </Button>
-                </Box>
+                <CheckoutBox cart={cart} />
             </Grid>
         </>
     );
