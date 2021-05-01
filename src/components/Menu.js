@@ -1,7 +1,7 @@
 import { Paper, Tabs, Tab, Grid, Button } from "@material-ui/core";
 import "./Menu.css";
 
-const Menu = ({ tabValue, handleTabChange, items, images }) => {
+const Menu = ({ tabValue, handleTabChange, items, images, addToCart }) => {
     let currentTabName = Object.keys(items)[tabValue];
     return (
         <div>
@@ -35,6 +35,7 @@ const Menu = ({ tabValue, handleTabChange, items, images }) => {
                                     images={images}
                                     itemName={itemName}
                                     itemPrice={items[currentTabName][itemName]}
+                                    addToCart={addToCart}
                                 ></MenuItem>
                             </Grid>
                         );
@@ -45,7 +46,7 @@ const Menu = ({ tabValue, handleTabChange, items, images }) => {
     );
 };
 
-const MenuItem = ({ images, itemName, itemPrice }) => {
+const MenuItem = ({ images, itemName, itemPrice, addToCart }) => {
     return (
         <>
             <Paper
@@ -68,7 +69,11 @@ const MenuItem = ({ images, itemName, itemPrice }) => {
                     variant="contained"
                     className="addToCartButton"
                     onClick={() => {
-                        alert("Added");
+                        addToCart({
+                            itemCount: 1,
+                            itemName: itemName,
+                            itemPrice: itemPrice
+                        });
                     }}
                 >
                     Add to Cart

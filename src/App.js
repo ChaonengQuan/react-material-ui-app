@@ -73,22 +73,49 @@ function App() {
 
     //shopping cart state
     const [cart, setCart] = useState([
-        {
-            itemCount: 1,
-            itemName: "Cappuccino",
-            itemPrice: 0.99
-        },
-        {
-            itemCount: 20,
-            itemName: "Edamame",
-            itemPrice: 6.49
-        },
-        {
-            itemCount: 100,
-            itemName: "Strawberry Fruit Smoothie",
-            itemPrice: 12.49
-        }
+        // {
+        //     itemCount: 1,
+        //     itemName: "Cappuccino",
+        //     itemPrice: 0.99
+        // }
     ]);
+
+    const addToCart = (newItem) => {
+        let itemAlreadyInCart = cart
+            .map((item) => item.itemName)
+            .some((itemName) => itemName === newItem.itemName);
+        if (itemAlreadyInCart) {
+            incrementCount(newItem.itemName);
+        } else {
+            setCart(cart.concat(newItem));
+        }
+    };
+
+    const deleteFromCart = (itemName) => {
+        setCart(cart.filter((item) => item.itemName !== itemName));
+    };
+
+    const incrementCount = (itemName) => {
+        const newCart = [...cart];
+        let index = newCart.findIndex(
+            (element) => element.itemName === itemName
+        );
+        newCart[index].itemCount = newCart[index].itemCount + 1;
+        setCart(newCart);
+    };
+
+    const decrementCount = (itemName) => {
+        const newCart = [...cart];
+        let index = newCart.findIndex(
+            (element) => element.itemName === itemName
+        );
+        if (newCart[index].itemCount - 1 === 0) {
+            deleteFromCart(itemName);
+        } else {
+            newCart[index].itemCount = newCart[index].itemCount - 1;
+            setCart(newCart);
+        }
+    };
 
     // Tab state
     const [tabValue, setTabValue] = useState(0);
@@ -106,6 +133,9 @@ function App() {
                 items={items}
                 images={images}
                 cart={cart}
+                addToCart={addToCart}
+                incrementCount={incrementCount}
+                decrementCount={decrementCount}
             />
         </div>
     );

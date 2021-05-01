@@ -4,7 +4,12 @@ import "./Cart.css";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, incrementCount, decrementCount }) => {
+    function getSubTotal(cart){
+        let sum = cart.map(item => item.itemCount * item.itemPrice ).reduce( (acc, cur) => (acc + cur), 0);
+        return sum.toFixed(2);
+    }
+
     return (
         <>
             <Grid container direction="column" justify="center">
@@ -48,6 +53,9 @@ const Cart = ({ cart }) => {
                                             minWidth: "30px",
                                             minHeight: "30px"
                                         }}
+                                        onClick={() => {
+                                            incrementCount(value.itemName);
+                                        }}
                                     >
                                         +
                                     </Button>
@@ -60,6 +68,9 @@ const Cart = ({ cart }) => {
                                             minWidth: "30px",
                                             minHeight: "30px",
                                             alignSelf: "right"
+                                        }}
+                                        onClick={() => {
+                                            decrementCount(value.itemName);
                                         }}
                                     >
                                         -
@@ -77,7 +88,7 @@ const Cart = ({ cart }) => {
                 })}
 
                 <Box className="cartCheckoutBox">
-                    <div>Subtotal: $99.99</div>
+                    <div>Subtotal: ${getSubTotal(cart)}</div>
                     <Button
                         variant="contained"
                         onClick={() => {
